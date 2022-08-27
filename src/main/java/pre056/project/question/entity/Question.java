@@ -16,7 +16,7 @@ import java.util.Date;
 public class Question {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long questionId;
+    private int questionId;
 
     @Column(nullable=false)
     private String title;

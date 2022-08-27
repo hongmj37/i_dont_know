@@ -12,29 +12,44 @@ public class QuestionController {
     @Autowired
     private QuestionService questionService;
 
+    /**
+     * 전체 게시글 조회
+     */
     @GetMapping
-    public ResponseEntity read() {
-
+    public ResponseEntity getQuestions() {
+        return null;
     }
 
+    /**
+     * 게시글 하나 조회
+     */
     @GetMapping("/{question-id}")
-    public ResponseEntity read() {
-
+    public ResponseEntity getQuestion() {
+        return null;
     }
 
+    /**
+     * 게시글 등록
+     */
     @PostMapping("/")
-    public ResponseEntity read() {
-
+    public ResponseEntity postQuestion() {
+        return null;
     }
 
+    /**
+     * 게시글 수정
+     */
     @PatchMapping("/{question-id}")
-    public ResponseEntity read() {
-
+    public ResponseEntity patchQuestion() {
+        return null;
     }
 
+    /**
+     * 게시글 삭제
+     */
     @DeleteMapping("/{question-id}")
-    public ResponseEntity read() {
-
+    public ResponseEntity deleteQuestion() {
+        return null;
     }
 
 }
