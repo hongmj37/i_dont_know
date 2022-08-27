@@ -5,6 +5,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import pre056.project.question.entity.Question;
+import pre056.project.question.entity.QuestionRequest;
+import pre056.project.question.entity.QuestionResponse;
 import pre056.project.question.service.QuestionService;
 
 @Controller
@@ -32,8 +34,9 @@ public class QuestionController {
      * 게시글 등록
      */
     @PostMapping
-    public ResponseEntity postQuestion(@RequestBody Question question) {
-        return null;
+    public ResponseEntity<QuestionResponse> postQuestion(@RequestBody QuestionRequest questionRequest) {
+        Question questionResult = questionService.post(questionRequest);
+        return ResponseEntity.ok(new QuestionResponse(questionResult));
     }
 
     /**

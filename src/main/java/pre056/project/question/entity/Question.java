@@ -3,6 +3,8 @@ import lombok.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.ColumnDefault;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -13,6 +15,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Builder
 @Entity
+@Data
 public class Question {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -25,13 +28,17 @@ public class Question {
     private String contents;
 
     @Column(nullable=false, updatable = false)
+    @ColumnDefault("CURRENT_TIMESTAMP")
     private LocalDateTime regDate;
 
-    private Date editDate;
+    @ColumnDefault("CURRENT_TIMESTAMP")
+    private LocalDateTime editDate;
 
+    @ColumnDefault("0")
     private int viewNum;
 
+    @ColumnDefault("0")
     private int recommendNum;
 
-    private SkillTag skillTag;
+   // private SkillTag skillTag;
 }
