@@ -43,7 +43,7 @@ public class QuestionController {
      * 게시글 수정
      */
     @PatchMapping("{question-id}")
-    public ResponseEntity patchQuestion() {
+    public ResponseEntity patchQuestion(@PathVariable int id, @RequestBody QuestionRequest questionRequest) {
         return null;
     }
 
