@@ -33,5 +33,5 @@ public class Question {
 
     private int recommendNum;
 
-    private String skillTag;
+    private SkillTag skillTag;
 }
